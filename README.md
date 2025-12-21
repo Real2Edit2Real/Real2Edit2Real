@@ -4,7 +4,7 @@
     <a href="https://github.com/ZhaoYujie2002">Yujie Zhao*</a>,
     <a href="https://hwfan.io/about-me/">Hongwei Fan*</a>,
     <a href="https://scholar.google.com/citations?user=Ht9e9D4AAAAJ&hl=en">Di Chen</a>,
-    <a href="https://github.com/ZhaoYujie2002/Real2Edit2Real">Shengcong Chen</a>,
+    <a href="https://github.com/Real2Edit2Real/Real2Edit2Real">Shengcong Chen</a>,
     <a href="https://scholar.google.com/citations?user=TivepIgAAAAJ&hl=en">Liliang Chen</a>,
     <a href="https://clorislili.github.io/clorisLi/">Xiaoqi Li</a>,
     <a href="https://scholar.google.com/citations?user=oqN1dA8AAAAJ">Guanghui Ren</a>,
