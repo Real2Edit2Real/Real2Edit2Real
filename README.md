@@ -21,8 +21,8 @@
   <img src="https://img.shields.io/badge/Paper-VGGT" alt="Paper PDF">
 </a>
 -->
-<a href="https://arxiv.org/abs/2507.07136">
-  <img src="https://img.shields.io/badge/arXiv-2507.07136-b31b1b" alt="arXiv">
+<a href="https://arxiv.org/abs/2512.19402">
+  <img src="https://img.shields.io/badge/arXiv-2512.19402-b31b1b" alt="arXiv">
 </a>
 <a href="https://real2edit2real.github.io/">
   <img src="https://img.shields.io/badge/Project_Page-Real2Edit2Real-green" alt="Project Page">
