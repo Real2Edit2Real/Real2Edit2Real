@@ -16,6 +16,10 @@
 </div>
 
 <div align="center">
+  **CVPR 2026**
+</div>
+
+<div align="center">
 <!--
 <a href="https://jytime.github.io/data/VGGT_CVPR25.pdf" target="_blank" rel="noopener noreferrer">
   <img src="https://img.shields.io/badge/Paper-VGGT" alt="Paper PDF">
