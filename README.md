@@ -16,7 +16,7 @@
 </div>
 
 <div align="center">
-  **CVPR 2026**
+  <strong>CVPR 2026</strong>
 </div>
 
 <div align="center">
