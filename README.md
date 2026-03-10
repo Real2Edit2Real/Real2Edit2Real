@@ -53,13 +53,16 @@ This repository contains the official authors implementation associated with the
 ![Framework](assets/framework.png)
 
 ## 📢 News
-- **Mar &nbsp;10, 2026:** We released the code and the model weights.
+- **Mar 10, 2026:** We released the code and the model weights.
 - **Feb 21, 2026:** Real2Edit2Real has been accepted by CVPR 2026. 🥳🥳
 - **Dec 22, 2025:** We released the [arXiv](https://arxiv.org/abs/2512.19402) and [demo](https://real2edit2real.github.io/) of Real2Edit2Real.
 
 ## 🛠️ Installation
 
 ```bash
+git clone --recurse-submodules https://github.com/Real2Edit2Real/Real2Edit2Real.git
+
+cd Real2Edit2Real
 conda create -y -n r2e2r python=3.10
 conda activate r2e2r
 conda install -y nvidia/label/cuda-12.1.0::cuda-toolkit -c nvidia/label/cuda-12.1.0
