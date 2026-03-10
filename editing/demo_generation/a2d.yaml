@@ -1,0 +1,19 @@
+##
+## Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+##
+## NVIDIA CORPORATION, its affiliates and licensors retain all intellectual
+## property and proprietary rights in and to this material, related
+## documentation and any modifications thereto. Any use, reproduction,
+## disclosure or distribution of this material and related documentation
+## without an express license agreement from NVIDIA CORPORATION or
+## its affiliates is strictly prohibited.
+##
+
+robot_cfg:
+  kinematics:
+    urdf_path: "data/A2D_120s/A2D_fixed_hw.urdf"
+    asset_root_path: "data/A2D_120s/"
+    left_base_link: "base_link_l"
+    left_ee_link: "left_base_link"
+    right_base_link: "base_link_r"
+    right_ee_link: "right_base_link"

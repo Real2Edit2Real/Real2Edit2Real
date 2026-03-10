@@ -1,0 +1,62 @@
+_target_: demo_generation.demogen.DemoGen
+source_name: agibot
+task_name: lift_box
+source_id: 0
+data_root: data/example_data/${task_name}/source_${source_id}
+output_root: data/generated_data/${task_name}/source_${source_id}
+preprocess_root: data/mani_data_preprocessed/${task_name}/source_${source_id}
+confidence_thres: 30
+
+task_n_object: 1
+
+use_linear_interpolation: true
+interpolate_step_size: 0.01
+fixed_arms: []
+target_cameras: 
+  - head
+  - hand_left
+  - hand_right
+
+use_manual_parsing_frames: true
+parsing_frames:
+  prepare: 30
+  right-motion-1: 40
+  right-skill-1: 110
+  left-motion-1: 250
+  left-skill-1: 350
+  end: 600
+load_cache: True
+mask_names:
+  object: box
+  right_arm: right_arm
+  left_arm: left_arm
+  desktop: white desktop
+  
+generation:
+  range_name: generate 
+  n_gen_per_source: 60  # 1 source demo --> how many target demos?, for single gpu
+  check_multiply: 40
+  n_grid_obj: 5
+  render_video: false
+  render_depth: true
+  render_canny: false
+  render_file: false
+  mode: full_random
+  disturbance: false
+  adjust_speed: true
+  
+trans_range:
+  generate:
+    object: [[-0.2, -0.2, 0.0], [0.2, 0.2, 0.0]]
+  debug:
+    object: [[0.0032579, 0.07753301, 0], [0.0032579, 0.07753301, 0]]
+rot_range:
+  generate:
+    object: [-30, 30] # degree
+  debug:
+    object: [-6.301086212088332, -6.301086212088332]
+relax_thresholds:
+  # x_lower, x_upper, y_lower, y_upper, z_lower, z_upper
+  object: [0.02, 0.02, 0.02, 0.02, 0, 0.02]
+  desktop_z_thres: 0.02
+  ee: [0.08, 0.08, 0.05]

@@ -1,0 +1,68 @@
+_target_: demo_generation.demogen.DemoGen
+
+source_name: agibot
+task_name: pour_water
+source_id: 0
+data_root: data/example_data/${task_name}/source_${source_id}
+output_root: data/generated_data/${task_name}/source_${source_id}
+preprocess_root: data/mani_data_preprocessed/${task_name}/source_${source_id}
+confidence_thres: 30
+
+task_n_object: 2
+target_to_object: right
+
+use_linear_interpolation: true
+interpolate_step_size: 0.01
+fixed_arms: 
+  - right
+target_cameras: 
+  - head
+  - hand_left
+  - hand_right
+
+use_manual_parsing_frames: true
+parsing_frames:
+  prepare: 30
+  motion-1: 0
+  skill-1: 90
+  motion-2: 270
+  skill-2: 300
+  end: 520
+load_cache: True
+mask_names:
+  object: teapot
+  target: cup
+  right_arm: right_arm
+  left_arm: left_arm
+  desktop: white desktop
+  
+generation:
+  range_name: generate
+  n_gen_per_source: 60  # 1 source demo --> how many target demos?, for single gpu
+  check_multiply: 20
+  n_grid_obj: 5
+  n_grid_targ: 5
+  render_video: false
+  render_depth: true
+  render_canny: false
+  render_file: false
+  mode: full_random
+  disturbance: false
+  adjust_speed: true
+  
+trans_range:
+  generate:
+    object: [[-0.1, -0.2, 0.0], [0.3, 0.2, 0.0]]
+    target: [[-0.1, -0.2, 0.0], [0.3, 0.2, 0.0]] 
+
+rot_range:
+  generate:
+    object: [-15, 45] # degree
+    target: [-30, 60] # degree
+
+relax_thresholds:
+  # x_lower, x_upper, y_lower, y_upper, z_lower, z_upper
+  object: [0.02, 0.02, 0.02, 0.02, 0, 0.02]
+  target: [0.02, 0.02, 0.02, 0.02, 0, 0.02]
+  desktop_z_thres: 0.04
+  ee: [0.08, 0.08, 0.08]

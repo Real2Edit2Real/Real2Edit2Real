@@ -1,0 +1,42 @@
+Cam2Name = {
+    'fractal20220817_data' : {'head': '1'},
+    'taco_play': {'third_person_perspective_0': '1', 'unknown_hand': '2'},
+    'stanford_mask_vit_converted_externally_to_rlds': {'third_person_perspective_0': '1'},
+    'roboturk': {'third_person_perspective_0': '1'},
+    'maniskill_dataset_converted_externally_to_rlds': {'third_person_perspective_0': '1', 'unknown_hand': '2'},
+    'language_table': {'third_person_perspective_0': '1'},
+    'kuka': {'head': '1'},
+    'e6': {'head': 'head', 'right_hand': 'right_hand', 'left_hand': 'left_hand', 'third_person_perspective_0':'top'},
+    'sim': {'head': 'head', 'right_hand': 'right_hand', 'left_hand': 'left_hand', 'third_person_perspective_0':'top',
+            'third_person_perspective_1': 'cam1', 'third_person_perspective_2': 'cam2', 'third_person_perspective_3': 'cam3',
+            'third_person_perspective_4': 'cam4', 'third_person_perspective_5': 'cam5', 'third_person_perspective_6': 'cam6'},
+    'bridge':{'head': '1'},
+    'libero_spatial':{'third_person_perspective_0': 'agentview0', 'third_person_perspective_1': 'agentview1', 'third_person_perspective_2': 'agentview2',
+                      'third_person_perspective_3': 'frontview0', 'third_person_perspective_4': 'frontview1', 'third_person_perspective_5': 'frontview2',
+                      'third_person_perspective_6': 'frontview3', 'third_person_perspective_7': 'frontview4', 'third_person_perspective_8': 'frontview5',
+                      'third_person_perspective_9': 'frontview6', 'hand': 'robot0_eye_in_hand', 'third_person_perspective_10': 'sideview'},
+    'libero_object':{'third_person_perspective_0': 'agentview0', 'third_person_perspective_1': 'agentview1', 'third_person_perspective_2': 'agentview2',
+                      'third_person_perspective_3': 'frontview0', 'third_person_perspective_4': 'frontview1', 'third_person_perspective_5': 'frontview2',
+                      'third_person_perspective_6': 'frontview3', 'third_person_perspective_7': 'frontview4', 'third_person_perspective_8': 'frontview5',
+                      'third_person_perspective_9': 'frontview6', 'hand': 'robot0_eye_in_hand', 'third_person_perspective_10': 'sideview'},
+    'libero_goal':{'third_person_perspective_0': 'agentview0', 'third_person_perspective_1': 'agentview1', 'third_person_perspective_2': 'agentview2',
+                      'third_person_perspective_3': 'frontview0', 'third_person_perspective_4': 'frontview1', 'third_person_perspective_5': 'frontview2',
+                      'third_person_perspective_6': 'frontview3', 'third_person_perspective_7': 'frontview4', 'third_person_perspective_8': 'frontview5',
+                      'third_person_perspective_9': 'frontview6', 'hand': 'robot0_eye_in_hand', 'third_person_perspective_10': 'sideview'},
+    'libero_10':{'third_person_perspective_0': 'agentview0', 'third_person_perspective_1': 'agentview1', 'third_person_perspective_2': 'agentview2',
+                      'third_person_perspective_3': 'frontview0', 'third_person_perspective_4': 'frontview1', 'third_person_perspective_5': 'frontview2',
+                      'third_person_perspective_6': 'frontview3', 'third_person_perspective_7': 'frontview4', 'third_person_perspective_8': 'frontview5',
+                      'third_person_perspective_9': 'frontview6', 'hand': 'robot0_eye_in_hand', 'third_person_perspective_10': 'sideview'},
+    'libero_90':{'third_person_perspective_0': 'agentview0', 'third_person_perspective_1': 'agentview1', 'third_person_perspective_2': 'agentview2',
+                      'third_person_perspective_3': 'frontview0', 'third_person_perspective_4': 'frontview1', 'third_person_perspective_5': 'frontview2',
+                      'third_person_perspective_6': 'frontview3', 'third_person_perspective_7': 'frontview4', 'third_person_perspective_8': 'frontview5',
+                      'third_person_perspective_9': 'frontview6', 'hand': 'robot0_eye_in_hand', 'third_person_perspective_10': 'sideview'},
+    
+    'juxing': {'head': 'head', 'right_hand': 'right_hand', 'left_hand': 'left_hand', 'third_person_perspective_0':'top'},
+    
+    'a2d': {'head': 'head', 'left_hand': 'left_hand', 'right_hand': 'right_hand', 'third_person_perspective_0': 'head_center', 'third_person_perspective_1': 'head_left', 'third_person_perspective_2': 'head_right'},
+
+    'a2d_ori': {'head': 'head', 'left_hand': 'hand_left', 'right_hand': 'hand_right', 'third_person_perspective_0': 'head_center', 'third_person_perspective_1': 'head_left', 'third_person_perspective_2': 'head_right'},
+
+    'pour_water': {'head': 'head', 'left_hand': 'left_hand', 'right_hand': 'right_hand', 'third_person_perspective_0': 'head_center', 'third_person_perspective_1': 'head_left', 'third_person_perspective_2': 'head_right'}
+}

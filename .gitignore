@@ -1,4 +1,5 @@
 .DS_Store
+logs/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
@@ -15,7 +16,6 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
 lib64/
 parts/
 sdist/
@@ -206,3 +206,8 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+checkpoints/
+outputs/
+data/*
+submit.sh

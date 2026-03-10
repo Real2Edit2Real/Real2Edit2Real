@@ -1,0 +1,163 @@
+model_name: 'action_depth_canny_cosmos2'
+logging_dir: logs
+output_dir: logs
+report_to: None
+tracker_name: cosmos2_trainer
+
+# total training step is decided by the minimum of the below two
+train_steps: 1000000
+train_epochs: 10000
+
+steps_to_save: 1000
+steps_to_log: 5
+steps_to_val: 1000
+
+mixed_precision: bf16
+allow_tf32: False
+
+# timeout, seconds
+nccl_timeout: 600
+seed: 42
+
+prompt_emb_mode: online
+train_w_cfg: false  # whether to dropout a portion of the prompts for classifier-free guidance
+caption_dropout_p: 0.2
+load_val: True
+
+# vae
+enable_slicing: True
+enable_tiling: True
+
+transformer:
+  model_path: '../checkpoints/ge_sim_cosmos_v0.1.safetensors'
+  config:
+    in_channels: 32  # 16 (vae) + 3 (traj) + 6 (raymap) + 1 (padding mask) + depth (3) + canny (3)
+    out_channels: 16
+    num_attention_heads: 16
+    attention_head_dim: 128
+    num_layers: 28
+    mlp_ratio: 4.0
+    text_embed_dim: 1024
+    adaln_lora_dim: 256
+    max_size: [128, 240, 240]
+    patch_size: [1, 2, 2]
+    rope_scale: [1.0, 3.0, 3.0]
+    concat_padding_mask: true 
+    extra_pos_embed_type: null
+    use_view_embed: true
+
+data:
+  train:
+    data_roots: ["/path/to/dataset", ]
+    preprocess_root: "/path/to/annotated-results"
+    domains: ["agibotworld", ]
+    sample_size: [384, 512]
+    sample_n_frames: 360
+    preprocess :  'resize'
+    valid_cam :  ['head', 'hand_left', 'hand_right']
+    # valid_cam :  'head'
+    chunk: 25
+    n_previous: 4
+    previous_pick_mode: 'random'
+    action_dim: 7
+    random_crop: True
+    min_sep: 1
+    max_sep: 3
+    split: 'train'
+    fps: 30
+    use_ori_extrinsic: False
+    adepth_aug_prob: 0.5  # probability to apply depth augmentation
+  val:
+    data_roots: ["/path/to/dataset", ]
+    preprocess_root: "/path/to/annotated-results"
+    domains: ["agibotworld", ]
+    sample_size: [384, 512]
+    sample_n_frames: 360
+    preprocess :  'resize'
+    valid_cam :  ['head', 'hand_left', 'hand_right']
+    # valid_cam :  'head'
+    chunk: 25
+    n_previous: 4
+    previous_pick_mode: 'random'
+    action_dim: 7
+    random_crop: True
+    min_sep: 1
+    max_sep: 3
+    split: 'validation'
+    fps: 30
+    use_ori_extrinsic: False
+
+# dataloader
+batch_size: 2
+dataloader_num_workers: 2
+pin_memory: True
+
+# LoRA config !!!!!!
+train_type: 'full'
+target_modules: "all-linear"
+rank: 256
+lora_alpha: 256
+prev_checkpoint: ~
+
+gradient_checkpointing: True
+noise_to_first_frame: 0.2
+wo_hand_cond: False
+wo_cap_prompt: False
+
+# Optimizer config !!!!!
+optimizer: adamw
+lr: 1e-4
+beta1: 0.9
+beta2: 0.95
+beta3: 0.999
+epsilon: 1e-8
+weight_decay: 5e-5
+optimizer_8bit: True
+optimizer_torchao: False
+scale_lr: False
+
+max_grad_norm: 1.0
+gradient_accumulation_steps: 1
+
+# lr scheduler config !!!!
+lr_scheduler: constant_with_warmup
+lr_warmup_steps: 1000
+lr_num_cycles: 1
+lr_power: 1.0
+
+# config for timestep !!!!!
+flow_weighting_scheme: none
+flow_logit_mean: 0.0
+flow_logit_std: 1.0
+flow_mode_scale: 1.29
+
+train_mode: 'video_only'
+use_color_jitter: 0.3
+num_inference_step: 35
+
+val_shuffle: True
+
+
+### traj, rays, depth, canny
+cat_traj: True
+cat_rays: True
+cat_depth: True
+cat_canny: True
+
+traj_dropout: 0
+rays_dropout: 0
+depth_dropout: 0.5
+canny_dropout: 0.5
+all_dropout: 0.1
+
+# deepspeed config
+use_deepspeed: true
+deepspeed:
+  zero_optimization:
+    stage: 2
+    # offload_optimizer:
+    #   device: cpu
+  fp16:
+    enabled: false
+  bf16:
+    enabled: true

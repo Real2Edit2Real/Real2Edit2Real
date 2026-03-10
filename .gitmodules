@@ -1,0 +1,9 @@
+[submodule "third-party/curobo"]
+	path = third-party/curobo
+	url = https://github.com/NVlabs/curobo.git
+[submodule "third-party/GroundingDINO"]
+	path = third-party/GroundingDINO
+	url = https://github.com/IDEA-Research/GroundingDINO
+[submodule "third-party/sam2"]
+	path = third-party/sam2
+	url = https://github.com/facebookresearch/sam2

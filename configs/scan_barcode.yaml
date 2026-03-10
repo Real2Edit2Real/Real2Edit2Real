@@ -1,0 +1,73 @@
+_target_: demo_generation.demogen.DemoGen
+
+source_name: agibot
+task_name: scan_barcode
+source_id: 0
+data_root: data/example_data/${task_name}/source_${source_id}
+output_root: data/generated_data/${task_name}/source_${source_id}
+preprocess_root: data/mani_data_preprocessed/${task_name}/source_${source_id}
+confidence_thres: 30
+sam_for_all_frames: true
+
+task_n_object: 2
+target_to_object: right
+
+use_linear_interpolation: true
+interpolate_step_size: 0.01
+fixed_arms: []
+target_cameras: 
+  - head
+  - hand_left
+  - hand_right
+
+use_manual_parsing_frames: true
+parsing_frames:
+  prepare: 30
+  left-motion-1: 20
+  left-skill-1: 70
+  left-motion-2: 220
+  right-motion-1: 310
+  right-skill-1: 380
+  right-motion-2: 520
+  skill-2: 600
+  end: 709
+load_cache: True
+mask_names:
+  object: snack
+  target: scanner
+  right_arm: right_arm
+  left_arm: left_arm
+  desktop: white desktop
+  
+generation:
+  range_name: generate
+  n_gen_per_source: 60  # 1 source demo --> how many target demos?, for single gpu
+  check_multiply: 10
+  n_grid_obj: 5
+  n_grid_targ: 5
+  render_video: false
+  render_depth: true
+  render_canny: true
+  render_file: false
+  mode: full_random
+  disturbance: false
+  adjust_speed: true
+  canny_thres2: 10
+
+trans_range:
+  generate:
+    object: [[-0.2, -0.2, 0.0], [0.2, 0.2, 0.0]]
+    target: [[-0.2, -0.2, 0.0], [0.2, 0.2, 0.0]] 
+    
+rot_range:
+  generate:
+    object: [-15, 15] # degree
+    target: [-15, 15] # degree
+
+relax_thresholds:
+  # x_lower, x_upper, y_lower, y_upper, z_lower, z_upper
+  object: [0.02, 0.02, 0.02, 0.02, 0, 0.02]
+  target: [0.02, 0.02, 0.02, 0.02, 0, 0.02]
+  object_rightmoving: [0.03, 0.03, 0.03, 0.03, 0.03, 0.03]
+  desktop_z_thres: 0.01
+  ee: [0.08, 0.08, 0.08]

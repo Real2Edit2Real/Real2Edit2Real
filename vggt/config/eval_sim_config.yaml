@@ -1,0 +1,38 @@
+dataset:
+  _target_: training.data.composed_dataset.ComposedDataset
+  dataset_configs:
+    - _target_: training.data.datasets.agibot_world.AgiBotWorldDataset
+      AGIBOT_WORLD_DIR: /path/to/sim-eval-data
+      split: all_test
+      dataset_name: agibot_sim
+    
+
+common_config:
+  # Augmentation settings
+  augs:
+    scales: [0.8, 1.2]
+    color_jitter: Null                  # Use default color jitter
+    gray_scale: True                    # Probability of converting to grayscale
+    gau_blur: True                      # Probability of applying Gaussian blur
+    cojitter: True                      # Apply identical jitter to all frames
+    cojitter_ratio: 0.5                 # Probability of using shared jitter
+
+  # Fixed settings
+  fix_img_num: 3                        # Force each sequence to have 5 images
+  fix_aspect_ratio: 0.56                # Force aspect ratio to be 1:1
+
+  # Track settings
+  load_track: False                      # Whether to load precomputed tracks
+  track_num: 0                           # Number of tracks per sequence
+
+  # Mode settings
+  training: False                        # Whether the dataset is in training mode
+  inside_random: False                   # Disable random sampling across datasets
+
+  img_size: 518
+  patch_size: 14
+  landscape_check: True
+  rescale: True
+  rescale_aug: True
+  aspects: [0.33, 1]
+  img_nums: [3, 3]
