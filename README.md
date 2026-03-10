@@ -7,6 +7,7 @@
     <a href="https://scholar.google.com/citations?user=C8tdixEAAAAJ&hl=en">Shengcong Chen<sup>3</sup></a>,
     <a href="https://scholar.google.com/citations?user=TivepIgAAAAJ&hl=en">Liliang Chen<sup>3</sup></a>,
     <a href="https://clorislili.github.io/clorisLi/">Xiaoqi Li<sup>1,2</sup></a>,
+    <br>
     <a href="https://scholar.google.com/citations?user=oqN1dA8AAAAJ">Guanghui Ren<sup>3</sup></a>,
     <a href="https://zsdonghao.github.io/">Hao Dong<sup>1,2</sup></a>,
   </p>
@@ -35,6 +36,9 @@
 </a>
 <a href="https://real2edit2real.github.io/">
   <img src="https://img.shields.io/badge/Project_Page-Real2Edit2Real-green" alt="Project Page">
+</a>
+<a href="https://huggingface.co/Real2Edit2Real/Real2Edit2Real">
+  <img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue'></a>
 </a>
 <!--
 <a href="https://drive.google.com/drive/folders/1bHzv8e69NHseEj-3Qe0k0GqTmDYMGg-K?usp=sharing">
